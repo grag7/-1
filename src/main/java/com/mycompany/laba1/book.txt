@@ -1,0 +1,81 @@
+Преступление и наказание;Федор Достоевский;1866;Роман;Художественная;3
+Война и мир;Лев Толстой;1869;Роман;Художественная;3
+Мастер и Маргарита;Михаил Булгаков;1940;Роман;Художественная;3
+Евгений Онегин;Александр Пушкин;1833;Роман в стихах;Художественная;3
+Доктор Живаго;Борис Пастернак;1957;Роман;Художественная;3
+Анна Каренина;Лев Толстой;1877;Роман;Художественная;3
+Братья Карамазовы;Федор Достоевский;1880;Роман;Художественная;3
+Мёртвые души;Николай Гоголь;1842;Поэма;Художественная;3
+Тихий Дон;Михаил Шолохов;1940;Роман;Художественная;3
+Двенадцать стульев;Илья Ильф, Евгений Петров;1928;Роман;Художественная;3
+Записки из подполья;Федор Достоевский;1864;Роман;Художественная;3
+Мастер и Маргарита;Михаил Булгаков;1967;Роман;Художественная;3
+Идиот;Федор Достоевский;1869;Роман;Художественная;3
+Ревизор;Николай Гоголь;1836;Комедия;Художественная;3
+Война и мир;Лев Толстой;1869;Исторический роман;Художественная;3
+Мастер и Маргарита;Михаил Булгаков;1967;Фантастика;Художественная;3
+Обломов;Иван Гончаров;1859;Роман;Художественная;3
+Капитанская дочка;Александр Пушкин;1836;Роман;Художественная;3
+Мёртвые души;Николай Гоголь;1842;Поэма;Художественная;3
+Горе от ума;Александр Грибоедов;1825;Комедия;Художественная;3
+Золотой телёнок;Илья Ильф, Евгений Петров;1931;Комедия;Художественная;3
+Introduction to Algorithms;Thomas H. Cormen et al.;1990;Computer Science;Бакалавр;MIT Press;Английский;2
+Organic Chemistry;Jonathan Clayden et al.;2001;Chemistry;Бакалавр;Oxford University Press;Английский;2
+Fundamentals of Physics;David Halliday et al.;1970;Physics;Бакалавр;Wiley;Английский;2
+Linear Algebra and Its Applications;David C. Lay;2011;Mathematics;Бакалавр;Pearson;Английский;2
+Principles of Neural Science;Eric R. Kandel et al.;2013;Neuroscience;Магистр;McGraw-Hill;Английский;2
+Pattern Recognition and Machine Learning;Christopher M. Bishop;2006;Machine Learning;Магистр;Springer;Английский;2
+Introduction to Econometrics;James H. Stock et al.;2011;Economics;Бакалавр;Pearson;Английский;2
+Microeconomics;Robert S. Pindyck et al.;2018;Economics;Бакалавр;Pearson;Английский;2
+Macroeconomics;Olivier Blanchard et al.;2017;Economics;Бакалавр;Pearson;Английский;2
+Operating System Concepts;Abraham Silberschatz et al.;2018;Computer Science;Бакалавр;Wiley;Английский;2
+Data Structures and Algorithm Analysis in Java;Mark A. Weiss;2011;Computer Science;Бакалавр;Pearson;Английский;2
+Database System Concepts;Abraham Silberschatz et al.;2006;Computer Science;Бакалавр;McGraw-Hill;Английский;2
+Machine Learning: A Probabilistic Perspective;Kevin P. Murphy;2012;Machine Learning;Магистр;MIT Press;Английский;2
+Principles of Computer System Design;Jerome H. Saltzer et al.;2009;Computer Science;Магистр;Morgan Kaufmann;Английский;2
+Introduction to Statistical Learning;Gareth James et al.;2013;Statistics;Бакалавр;Springer;Английский;2
+Real Analysis;Halsey Royden et al.;1988;Mathematics;Бакалавр;Pearson;Английский;2
+Introduction to Cryptography;Johannes Buchmann;2014;Computer Science;Магистр;Springer;Английский;2
+Introduction to Probability Models;Sheldon M. Ross;2014;Mathematics;Бакалавр;Academic Press;Английский;2
+Modern Information Retrieval;Ricardo Baeza-Yates et al.;2016;Computer Science;Магистр;Addison-Wesley;Английский;2
+Computer Networks;Andrew S. Tanenbaum et al.;2010;Computer Science;Бакалавр;Pearson;Английский;2
+Математический анализ;Смирнов В. И.;1974;Математика;Учебник;1
+Теория вероятностей и математическая статистика;Гнеденко Б. В., Хинчин А. Я.;1961;Математика;Учебник;1
+Общая биология;Баландин А. А., Чернова Е. В.;2008;Биология;Учебник;1
+История России;Ключевский В. О.;1897;История;Учебник;1
+Физическая химия;Левин Ю. Я.;1964;Химия;Учебник;1
+Основы социологии;Лазарев В. В.;1985;Социология;Учебник;1
+Общая физика;Ландау Л. Д., Лифшиц Е. М.;1973;Физика;Учебник;1
+История философии;Ильин И. И.;1912;Философия;Учебник;1
+Медицинская биохимия;Русанов А. Я.;1999;Биохимия;Учебник;1
+Геоморфология;Савичев О. Д.;1957;География;Учебник;1
+Микроэкономика;Манкив Н. Г., Тейлор М. П., Краснов О.;2008;Экономика;Учебник;1
+Основы геологии;Стародубцев Н. С.;1971;Геология;Учебник;1
+Основы права;Волков Б. В.;1995;Юриспруденция;Учебник;1
+Экология человека;Полунин Н. В.;2005;Экология;Учебник;1
+Теория автоматического управления;Аникин В. В.;1980;Автоматика;Учебник;1
+История русской литературы;Грушевская О. В.;2003;Литература;Учебник;1
+Современная политическая философия;Полян В. С.;2010;Политология;Учебник;1
+Органическая химия;Жариков Д. В.;1988;Химия;Учебник;1
+Механика сплошных сред;Седов Л. И.;1966;Механика;Учебник;1
+Экономическая теория;Маршалл А., Пигу Э.;2002;Экономика;Учебник;1
+вавава;George Orwell;1949;Роман;Английский;4
+To Kill a Mockingbird;Harper Lee;1960;Роман;Английский;4
+Pride and Prejudice;Jane Austen;1813;Роман;Английский;4
+The Great Gatsby;F. Scott Fitzgerald;1925;Роман;Английский;4
+The Catcher in the Rye;J.D. Salinger;1951;Роман;Английский;4
+Crime and Punishment;Fyodor Dostoevsky;1866;Роман;Русский;4
+One Hundred Years of Solitude;Gabriel García Márquez;1967;Магический реализм;Испанский;4
+Don Quixote;Miguel de Cervantes;1605;Роман;Испанский;4
+Anna Karenina;Leo Tolstoy;1877;Роман;Русский;4
+The Brothers Karamazov;Fyodor Dostoevsky;1880;Роман;Русский;4
+Les Misérables;Victor Hugo;1862;Исторический роман;Французский;4
+War and Peace;Leo Tolstoy;1869;Исторический роман;Русский;4
+The Picture of Dorian Gray;Oscar Wilde;1890;Философский роман;Английский;4
+Moby-Dick;Herman Melville;1851;Роман;Английский;4
+The Lord of the Rings;J.R.R. Tolkien;1954;Фэнтези;Английский;4
+The Hobbit;J.R.R. Tolkien;1937;Фэнтези;Английский;4
+The Little Prince;Antoine de Saint-Exupéry;1943;Философский роман;Французский;4
+The Alchemist;Paulo Coelho;1988;Парафилософский роман;Португальский;4
+The Name of the Rose;Umberto Eco;1980;Исторический детектив;Итальянский;4
+Brave New World;Aldous Huxley;1932;Роман;Английский;4
