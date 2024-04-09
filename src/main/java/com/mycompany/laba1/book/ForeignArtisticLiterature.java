@@ -6,8 +6,8 @@ public class ForeignArtisticLiterature extends ArtisticLiterature {
     private String language;
     private String nameAutor;
 
-    public ForeignArtisticLiterature(String namebook, String id, int yearOfRelease, String genre, String language, String nameAutor) {
-        super(namebook, id, yearOfRelease, genre);
+    public ForeignArtisticLiterature(String namebook, String id, int yearOfRelease, String genre, String language, String nameAutor, Type type) {
+        super(namebook, id, yearOfRelease, genre, type);
         this.language = language;
         this.nameAutor = nameAutor;
         

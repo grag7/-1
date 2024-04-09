@@ -29,12 +29,14 @@ public class AutoRandomFiller {
     }
     
     public void assignBooksToHumans() {
+        int count;
         for (AbstractHuman human: humanFactory.getListHuman()){
             ReaderTicket ticket = human.getReaderTicket();
+            count = 0;
             for(Abstraktbook book: bookFactory.getListBooks()) {
-                int chance = (int)(Math.random()*7 + 1);
-                if(chance == 1){ // Шанс присванивания книги 1/8 (0.125%)
-                    
+                int chance = (int)(Math.random()*17 + 1);
+                if(chance == 1 && count <= 9){ // Шанс присванивания книги 1/18
+                    count++;
                     ticket.addBookToList(book);
                 }
             }

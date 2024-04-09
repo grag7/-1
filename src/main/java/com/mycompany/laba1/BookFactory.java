@@ -2,6 +2,7 @@ package com.mycompany.laba1;
 
 
 import com.mycompany.laba1.book.Abstraktbook;
+import com.mycompany.laba1.book.Abstraktbook.Type;
 import com.mycompany.laba1.book.ForeignArtisticLiterature;
 import com.mycompany.laba1.book.ForeignStudy;
 import com.mycompany.laba1.book.RussianArtisticLiterature;
@@ -46,16 +47,16 @@ public class BookFactory {
         switch  (Integer.parseInt(parts[parts.length-1])) {
             
             case 1:
-                book = new RussianStudy(parts[0], String.valueOf(id++), Integer.parseInt(parts[2]), parts[3], parts[4]);
+                book = new RussianStudy(parts[0], String.valueOf(id++), Integer.parseInt(parts[2]),parts[3],parts[4],Type.RussianStudy );
                  break;
             case 2:
-                book = new ForeignStudy(parts[0], String.valueOf(id++), Integer.parseInt(parts[2]), parts[3],parts[4],parts[5],parts[6]);
+                book = new ForeignStudy(parts[0], String.valueOf(id++), Integer.parseInt(parts[2]), parts[3],parts[4],parts[5],parts[6],Type.ForeignStudy);
                  break;
             case 3:
-                book = new RussianArtisticLiterature(parts[0], String.valueOf(id++), Integer.parseInt(parts[2]), parts[3],parts[4]);
+                book = new RussianArtisticLiterature(parts[0], String.valueOf(id++), Integer.parseInt(parts[2]), parts[3],parts[4],Type.RussianArtisticLiterature);
                  break;
             case 4:
-                book = new ForeignArtisticLiterature(parts[0], String.valueOf(id++), Integer.parseInt(parts[2]), parts[3],parts[4],parts[1]);
+                book = new ForeignArtisticLiterature(parts[0], String.valueOf(id++), Integer.parseInt(parts[2]), parts[3],parts[4],parts[1],Type.ForeignArtisticLiterature);
                  break;
                 
             default:

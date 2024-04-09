@@ -5,8 +5,8 @@ public class ForeignStudy extends StudyBook {
      private String university;
      private String language;
 
-    public ForeignStudy(String namebook, String id, int yearOfRelease, String discipline, String levelEducation, String university, String language) {
-        super(namebook, id, yearOfRelease, discipline);
+    public ForeignStudy(String namebook, String id, int yearOfRelease, String discipline, String levelEducation, String university, String language, Type type) {
+        super(namebook, id, yearOfRelease, discipline,type);
         this.levelEducation = levelEducation;
         this.university = university;
         this.language = language;

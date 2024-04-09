@@ -7,12 +7,22 @@ public abstract class AbstractHuman {
     private String firstName;
     private String lastName;
     private ReaderTicket readerTicket;
+    private Typee typee;
+    
+    public enum Typee {
+         Student, Teacher
+    }
     
     
-    public AbstractHuman(String firstName, String lastName, ReaderTicket readerTicket) {
+    public AbstractHuman(String firstName, String lastName, ReaderTicket readerTicket,Typee typee) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.readerTicket = readerTicket;
+        this.typee = typee;
+    }
+    
+    public Typee getTypee() {
+        return typee;
     }
     
     public String getFirstName() {

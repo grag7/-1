@@ -1,8 +1,6 @@
 package com.mycompany.laba1;
 
 import com.github.javafaker.Faker;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 public class HumanFaker {

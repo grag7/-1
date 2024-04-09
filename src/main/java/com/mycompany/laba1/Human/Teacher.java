@@ -5,8 +5,8 @@ import com.mycompany.laba1.ReaderTicket;
 public class Teacher extends AbstractHuman {
     private String patronymic;
     
-    public Teacher(String firstName, String lastName, ReaderTicket ticket, String patronymic) {
-        super(firstName,lastName, ticket);
+    public Teacher(String firstName, String lastName, ReaderTicket ticket, String patronymic, Typee typee) {
+        super(firstName,lastName, ticket, typee);
         this.patronymic = patronymic;
     }
     

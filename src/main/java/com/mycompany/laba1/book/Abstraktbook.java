@@ -5,12 +5,21 @@ public abstract class Abstraktbook {
     private String namebook;
     private String id;
     private int yearOfRelease;
+    private Type type;
 
- 
-    public Abstraktbook(String namebook, String id, int yearOfRelease) {
+    
+    public enum Type {
+         ForeignArtisticLiterature, ForeignStudy, RussianArtisticLiterature, RussianStudy
+    }
+    public Abstraktbook(String namebook, String id, int yearOfRelease, Type type) {
         this.namebook = namebook;
         this.id = id;
         this.yearOfRelease = yearOfRelease;
+        this.type = type;
+    }
+    
+    public Type getType() {
+        return type;
     }
     
     

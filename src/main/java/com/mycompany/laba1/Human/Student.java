@@ -6,8 +6,8 @@ import com.mycompany.laba1.ReaderTicket;
 public class Student extends AbstractHuman {
     private String numgroup;
     
-    public Student(String firstName, String lastName, ReaderTicket ticket, String numgroup) {
-        super(firstName,lastName,ticket);
+    public Student(String firstName, String lastName, ReaderTicket ticket, String numgroup, Typee typee) {
+        super(firstName,lastName,ticket,  typee);
         this.numgroup = numgroup;
     }
     

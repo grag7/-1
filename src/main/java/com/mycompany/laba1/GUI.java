@@ -1,5 +1,6 @@
 package com.mycompany.laba1;
 import com.mycompany.laba1.Human.AbstractHuman;
+import com.mycompany.laba1.Human.AbstractHuman.Typee;
 import com.mycompany.laba1.Human.Student;
 import com.mycompany.laba1.Human.Teacher;
 import com.mycompany.laba1.book.Abstraktbook;
@@ -26,8 +27,8 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel = new javax.swing.JPanel();
+        jPaneProkrut = new javax.swing.JScrollPane();
         mainTree = new javax.swing.JTree();
         redistributeBooksButton = new javax.swing.JButton();
         regenerateAllButton = new javax.swing.JButton();
@@ -37,7 +38,7 @@ public class GUI extends javax.swing.JFrame {
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
         mainTree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(mainTree);
+        jPaneProkrut.setViewportView(mainTree);
 
         redistributeBooksButton.setBackground(new java.awt.Color(252, 252, 252));
         redistributeBooksButton.setForeground(new java.awt.Color(0, 0, 0));
@@ -57,27 +58,27 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
+        jPanel.setLayout(jPanelLayout);
+        jPanelLayout.setHorizontalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
                 .addContainerGap(34, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPaneProkrut, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelLayout.createSequentialGroup()
                         .addComponent(redistributeBooksButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(regenerateAllButton, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanelLayout.setVerticalGroup(
+            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPaneProkrut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(redistributeBooksButton)
                     .addComponent(regenerateAllButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -88,12 +89,12 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -116,88 +117,95 @@ public class GUI extends javax.swing.JFrame {
         DefaultMutableTreeNode allStudentsNode =
                 new DefaultMutableTreeNode("Студенты");
         
+        distributionHuman (allStudentsNode, allTeachersNode);
         model.add(allTeachersNode);
         model.add(allStudentsNode);
         
-        for (AbstractHuman human: filler.getHumanFactory().getListHuman()) {
-            if(human instanceof Student student) {
-                DefaultMutableTreeNode studentNode = new DefaultMutableTreeNode(
+        mainTree.setModel(new javax.swing.tree.DefaultTreeModel(model));
+       
+    }
+     public void distributionHuman(DefaultMutableTreeNode allStudentsNode,
+             DefaultMutableTreeNode allTeachersNode){
+     for (AbstractHuman human: filler.getHumanFactory().getListHuman()) {
+            switch(human.getTypee()){
+                case Student:
+                    Student student = (Student) human;
+                    DefaultMutableTreeNode studentNode = new DefaultMutableTreeNode(
                         student.getFirstName() + " " + student.getLastName());
                 allStudentsNode.add(studentNode);
                 for(Abstraktbook book: student.getReaderTicket().getListOfBooks()){
-                    if(book instanceof RussianStudy russianStudy) {
-                        studentNode.add(
-                                new DefaultMutableTreeNode(russianStudy.getNamebook() + ", "
-                               + russianStudy.getType() +  ", "
-                                + russianStudy.getDiscipline()));
-                    }
-                    else if(book instanceof ForeignStudy foreignStudy){
-                        studentNode.add(
-                                new DefaultMutableTreeNode(foreignStudy.getNamebook() + ", "
-                                + foreignStudy.getLevelEducation() + ", "
-                                + foreignStudy.getUniversity() + ", "
-                                + foreignStudy.getLanguage()));
-                    }
-                    else if(book instanceof RussianArtisticLiterature artisticLiterature){
-                        studentNode.add(new DefaultMutableTreeNode(
-                                artisticLiterature.getNamebook() + ", " + 
-                                artisticLiterature.getGenre() + ", " + 
-                                artisticLiterature.getType()));
-                    }
-                    else if(book instanceof ForeignArtisticLiterature foreignArtisticLiterature) {
-                         studentNode.add(new DefaultMutableTreeNode(
-                                 foreignArtisticLiterature.getNamebook() + ", " 
-                                + foreignArtisticLiterature.getGenre() + ", "
-                                + foreignArtisticLiterature.getNameAutor() + ", " 
-                                +  foreignArtisticLiterature.getLanguage()));
-                    }
+                    studentNode.add(distributionOfBooks(book));
                 }
-            } 
-            else if(human instanceof Teacher teacher) {
-                DefaultMutableTreeNode teacherNode = new DefaultMutableTreeNode(
+                break;
+                case Teacher:
+                    Teacher teacher = (Teacher) human;
+                    DefaultMutableTreeNode teacherNode = new DefaultMutableTreeNode(
                         teacher.getFirstName() + " "
                         + teacher.getLastName() + " "
                         + teacher.getPatronymic() );
                 allTeachersNode.add(teacherNode);
                 for(Abstraktbook book: teacher.getReaderTicket().getListOfBooks()){
-                    if(book instanceof RussianStudy russianStudy) {
-                        teacherNode.add(new DefaultMutableTreeNode(
-                                russianStudy.getNamebook() + ", "
+                    teacherNode.add(distributionOfBooks(book));
+                }
+                break;
+            }
+        }
+     }
+    
+     public DefaultMutableTreeNode distributionOfBooks(Abstraktbook book){
+         String text;
+         System.out.println(book.getType());
+         switch(book.getType()){
+                case RussianStudy:
+                RussianStudy russianStudy = (RussianStudy) book;
+                 text = russianStudy.getNamebook() + ", "
                                + russianStudy.getType() + ", " 
-                               + russianStudy.getDiscipline()));
-                    }
-                    else if(book instanceof ForeignStudy foreignStudy){
-                        teacherNode.add(new DefaultMutableTreeNode(
-                                  foreignStudy.getNamebook() + " "
+                               + russianStudy.getDiscipline();
+                return new DefaultMutableTreeNode(text);
+                case RussianArtisticLiterature:
+                    RussianArtisticLiterature artisticLiterature = (RussianArtisticLiterature) book;
+                    text = artisticLiterature.getNamebook() + ", "
+                               + artisticLiterature.getGenre() + ", " 
+                               + artisticLiterature.getType();
+                    return new DefaultMutableTreeNode(text);
+                case ForeignStudy:
+                    ForeignStudy foreignStudy = (ForeignStudy) book;
+                    text = foreignStudy.getNamebook() + " "
                                 + foreignStudy.getLevelEducation() + ", "
                                 + foreignStudy.getUniversity() + ", "
-                                + foreignStudy.getLanguage()));
-                    }
-                    else if(book instanceof RussianArtisticLiterature artisticLiterature){
-                        teacherNode.add(new DefaultMutableTreeNode(
-                                artisticLiterature.getNamebook() + ", " 
-                                + artisticLiterature.getGenre() + ", "
-                                + artisticLiterature.getType()));
-                    }
-                    else if(book instanceof ForeignArtisticLiterature foreignArtisticLiterature) {
-                         teacherNode.add(new DefaultMutableTreeNode(
-                                 foreignArtisticLiterature.getNamebook() + " " 
+                                + foreignStudy.getLanguage();
+                    return new DefaultMutableTreeNode(text);
+                case ForeignArtisticLiterature:
+                    ForeignArtisticLiterature foreignArtisticLiterature = (ForeignArtisticLiterature) book;
+                    text = foreignArtisticLiterature.getNamebook() + " " 
                                 + foreignArtisticLiterature.getGenre() + " "
                                 + foreignArtisticLiterature.getNameAutor() + " " 
-                                +  foreignArtisticLiterature.getLanguage()));
+                                +  foreignArtisticLiterature.getLanguage();
+                    return new DefaultMutableTreeNode(text);
                     }
-                }
-            }
-            
-        }
-        mainTree.setModel(new javax.swing.tree.DefaultTreeModel(model));
-       
-    }
-
+         
+         return null;
+         
+             
+             
+     
+         
+         
+             
+         
+         
+         
+         
+     
+     
+     
+     
+     } 
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jPaneProkrut;
+    private javax.swing.JPanel jPanel;
     private javax.swing.JTree mainTree;
     private javax.swing.JButton redistributeBooksButton;
     private javax.swing.JButton regenerateAllButton;

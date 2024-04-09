@@ -5,8 +5,8 @@ package com.mycompany.laba1.book;
 public class ArtisticLiterature extends Abstraktbook {
      private String genre;
 
-    public ArtisticLiterature(String namebook, String id, int yearOfRelease, String genre) {
-        super(namebook,id, yearOfRelease);
+    public ArtisticLiterature(String namebook, String id, int yearOfRelease, String genre, Type type) {
+        super(namebook,id, yearOfRelease, type);
         this.genre = genre;
     }
 
