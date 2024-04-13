@@ -125,30 +125,25 @@ public class GUI extends javax.swing.JFrame {
        
     }
      public void distributionHuman(DefaultMutableTreeNode allStudentsNode,
-             DefaultMutableTreeNode allTeachersNode){
-     for (AbstractHuman human: filler.getHumanFactory().getListHuman()) {
-            switch(human.getTypee()){
-                case Student:
-                    Student student = (Student) human;
-                    DefaultMutableTreeNode studentNode = new DefaultMutableTreeNode(
-                        student.getFirstName() + " " + student.getLastName());
-                allStudentsNode.add(studentNode);
-                for(Abstraktbook book: student.getReaderTicket().getListOfBooks()){
-                    studentNode.add(distributionOfBooks(book));
-                }
-                break;
-                case Teacher:
-                    Teacher teacher = (Teacher) human;
-                    DefaultMutableTreeNode teacherNode = new DefaultMutableTreeNode(
-                        teacher.getFirstName() + " "
-                        + teacher.getLastName() + " "
-                        + teacher.getPatronymic() );
-                allTeachersNode.add(teacherNode);
-                for(Abstraktbook book: teacher.getReaderTicket().getListOfBooks()){
-                    teacherNode.add(distributionOfBooks(book));
-                }
-                break;
+            DefaultMutableTreeNode allTeachersNode){
+        String FIO;
+        DefaultMutableTreeNode humanNode;
+        for (AbstractHuman human: filler.getHumanFactory().getListHuman()) {
+            if (human.getTypee() == Typee.Student){
+                FIO = ((Student) human).getFIO();
+                humanNode = new DefaultMutableTreeNode(FIO);
+                allStudentsNode.add(humanNode);
             }
+            else {
+                FIO = ((Teacher) human).getFIO();
+                humanNode = new DefaultMutableTreeNode(FIO);
+                allTeachersNode.add(humanNode);
+            }
+            
+            for(Abstraktbook book: human.getReaderTicket().getListOfBooks()){
+                    humanNode.add(distributionOfBooks(book));
+                }
+            
         }
      }
     
@@ -185,21 +180,6 @@ public class GUI extends javax.swing.JFrame {
                     }
          
          return null;
-         
-             
-             
-     
-         
-         
-             
-         
-         
-         
-         
-     
-     
-     
-     
      } 
      
 

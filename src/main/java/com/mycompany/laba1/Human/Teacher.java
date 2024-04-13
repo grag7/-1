@@ -19,4 +19,9 @@ public class Teacher extends AbstractHuman {
         this.patronymic = patronymic;
     }
     
+    public String getFIO() {
+        String fio =  this.getFirstName() + " " + this.getLastName() + " " + this.getPatronymic();
+        return fio;
+    }
+    
 }

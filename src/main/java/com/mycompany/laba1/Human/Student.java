@@ -20,4 +20,10 @@ public class Student extends AbstractHuman {
         this.numgroup = numgroup;
     }
     
+    public String getFIO() {
+        String fio = this.getFirstName() + " " + this.getLastName();
+                
+        return fio;
+    }
+    
 }
