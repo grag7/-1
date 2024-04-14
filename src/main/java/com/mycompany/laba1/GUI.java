@@ -125,25 +125,28 @@ public class GUI extends javax.swing.JFrame {
        
     }
      public void distributionHuman(DefaultMutableTreeNode allStudentsNode,
-            DefaultMutableTreeNode allTeachersNode){
-        String FIO;
-        DefaultMutableTreeNode humanNode;
-        for (AbstractHuman human: filler.getHumanFactory().getListHuman()) {
-            if (human.getTypee() == Typee.Student){
-                FIO = ((Student) human).getFIO();
-                humanNode = new DefaultMutableTreeNode(FIO);
-                allStudentsNode.add(humanNode);
-            }
-            else {
-                FIO = ((Teacher) human).getFIO();
-                humanNode = new DefaultMutableTreeNode(FIO);
-                allTeachersNode.add(humanNode);
-            }
-            
-            for(Abstraktbook book: human.getReaderTicket().getListOfBooks()){
-                    humanNode.add(distributionOfBooks(book));
+             DefaultMutableTreeNode allTeachersNode){
+     for (AbstractHuman human: filler.getHumanFactory().getListHuman()) {
+         String FIO = human.getFIO();
+            switch(human.getTypee()){
+                case Student:
+                    DefaultMutableTreeNode studentNode = new DefaultMutableTreeNode(
+                        FIO);
+                allStudentsNode.add(studentNode);
+                for(Abstraktbook book: human.getReaderTicket().getListOfBooks()){
+                    studentNode.add(distributionOfBooks(book));
                 }
-            
+               
+                break;
+                case Teacher:
+                    DefaultMutableTreeNode teacherNode = new DefaultMutableTreeNode(
+                       FIO);
+                allTeachersNode.add(teacherNode);
+                for(Abstraktbook book: human.getReaderTicket().getListOfBooks()){
+                    teacherNode.add(distributionOfBooks(book));
+                }
+                break;
+            }
         }
      }
     

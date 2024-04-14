@@ -53,4 +53,9 @@ public abstract class AbstractHuman {
     public void setReaderTicket(ReaderTicket readerTicket) {
         this.readerTicket = readerTicket;
     }
+    
+     public abstract String getFIO();
+      
+    
+    
 }
