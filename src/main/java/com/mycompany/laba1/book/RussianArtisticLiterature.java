@@ -19,4 +19,12 @@ public class RussianArtisticLiterature extends ArtisticLiterature  {
         this.types = types;
     }
     
+    public String getText() {
+        String text = this.getNamebook() + ", "
+                               + this.getGenre() + ", " 
+                               + this.getType();
+                
+        return text;
+    }
+    
 }

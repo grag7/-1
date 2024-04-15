@@ -33,6 +33,15 @@ public class ForeignArtisticLiterature extends ArtisticLiterature {
         this.nameAutor = nameAutor;
     }
     
+    
+    public String getText() {
+        String text = this.getNamebook() + " " 
+                                + this.getGenre() + " "
+                                + this.getNameAutor() + " " 
+                                +  this.getLanguage();
+                
+        return text;
+    }
 
     
 }

@@ -1,13 +1,6 @@
 package com.mycompany.laba1;
 import com.mycompany.laba1.Human.AbstractHuman;
-import com.mycompany.laba1.Human.AbstractHuman.Typee;
-import com.mycompany.laba1.Human.Student;
-import com.mycompany.laba1.Human.Teacher;
 import com.mycompany.laba1.book.Abstraktbook;
-import com.mycompany.laba1.book.ForeignArtisticLiterature;
-import com.mycompany.laba1.book.ForeignStudy;
-import com.mycompany.laba1.book.RussianArtisticLiterature;
-import com.mycompany.laba1.book.RussianStudy;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 
@@ -151,34 +144,15 @@ public class GUI extends javax.swing.JFrame {
      }
     
      public DefaultMutableTreeNode distributionOfBooks(Abstraktbook book){
-         String text;
-         System.out.println(book.getType());
+         String text = book.getText();
          switch(book.getType()){
                 case RussianStudy:
-                RussianStudy russianStudy = (RussianStudy) book;
-                 text = russianStudy.getNamebook() + ", "
-                               + russianStudy.getType() + ", " 
-                               + russianStudy.getDiscipline();
                 return new DefaultMutableTreeNode(text);
                 case RussianArtisticLiterature:
-                    RussianArtisticLiterature artisticLiterature = (RussianArtisticLiterature) book;
-                    text = artisticLiterature.getNamebook() + ", "
-                               + artisticLiterature.getGenre() + ", " 
-                               + artisticLiterature.getType();
                     return new DefaultMutableTreeNode(text);
                 case ForeignStudy:
-                    ForeignStudy foreignStudy = (ForeignStudy) book;
-                    text = foreignStudy.getNamebook() + " "
-                                + foreignStudy.getLevelEducation() + ", "
-                                + foreignStudy.getUniversity() + ", "
-                                + foreignStudy.getLanguage();
                     return new DefaultMutableTreeNode(text);
                 case ForeignArtisticLiterature:
-                    ForeignArtisticLiterature foreignArtisticLiterature = (ForeignArtisticLiterature) book;
-                    text = foreignArtisticLiterature.getNamebook() + " " 
-                                + foreignArtisticLiterature.getGenre() + " "
-                                + foreignArtisticLiterature.getNameAutor() + " " 
-                                +  foreignArtisticLiterature.getLanguage();
                     return new DefaultMutableTreeNode(text);
                     }
          

@@ -2,7 +2,7 @@
 package com.mycompany.laba1.book;
 
 
-public class StudyBook extends Abstraktbook {
+public abstract class StudyBook extends Abstraktbook {
     private String discipline;
 
     public StudyBook(String namebook, String id, int yearOfRelease, String discipline, Type type) {
@@ -18,4 +18,6 @@ public class StudyBook extends Abstraktbook {
     public void setDiscipline(String discipline) {
         this.discipline = discipline;
     }
+    
+    public abstract String getText();
 }

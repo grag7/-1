@@ -17,4 +17,12 @@ public class RussianStudy extends StudyBook {
     public void setTypes(String types) {
         this.types = types;
     }
+    
+    public String getText() {
+        String text = this.getNamebook() + ", "
+                               + this.getType() + ", " 
+                               + this.getDiscipline();
+                
+        return text;
+    }
 }

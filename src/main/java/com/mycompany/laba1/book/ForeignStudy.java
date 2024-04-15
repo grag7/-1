@@ -45,4 +45,13 @@ public class ForeignStudy extends StudyBook {
     }
      
     
+    public String getText() {
+        String text = this.getNamebook() + " "
+                                + this.getLevelEducation() + ", "
+                                + this.getUniversity() + ", "
+                                + this.getLanguage();
+                
+        return text;
+    }
+    
 }

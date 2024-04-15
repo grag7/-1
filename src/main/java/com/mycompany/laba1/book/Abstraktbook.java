@@ -55,4 +55,6 @@ public abstract class Abstraktbook {
         this.yearOfRelease = yearOfRelease;
     }
     
+     public abstract String getText();
+    
 }
