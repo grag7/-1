@@ -121,25 +121,20 @@ public class GUI extends javax.swing.JFrame {
              DefaultMutableTreeNode allTeachersNode){
      for (AbstractHuman human: filler.getHumanFactory().getListHuman()) {
          String FIO = human.getFIO();
+         DefaultMutableTreeNode humanNode = new DefaultMutableTreeNode(
+                       FIO);
             switch(human.getTypee()){
                 case Student:
-                    DefaultMutableTreeNode studentNode = new DefaultMutableTreeNode(
-                        FIO);
-                allStudentsNode.add(studentNode);
-                for(Abstraktbook book: human.getReaderTicket().getListOfBooks()){
-                    studentNode.add(distributionOfBooks(book));
-                }
-               
-                break;
+                    allStudentsNode.add(humanNode);
+                    break;
                 case Teacher:
-                    DefaultMutableTreeNode teacherNode = new DefaultMutableTreeNode(
-                       FIO);
-                allTeachersNode.add(teacherNode);
-                for(Abstraktbook book: human.getReaderTicket().getListOfBooks()){
-                    teacherNode.add(distributionOfBooks(book));
-                }
-                break;
+                    allTeachersNode.add(humanNode);
+                    break;
+
             }
+            for(Abstraktbook book: human.getReaderTicket().getListOfBooks()){
+                    humanNode.add(distributionOfBooks(book));
+                }
         }
      }
     
